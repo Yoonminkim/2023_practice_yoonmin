@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+html::-webkit-scrollbar{
+    display: none;
+}
+
+/* 전체 페이지 박스 */
+
+.page{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* 페이지1에 들어가는 박스들 */
+
+.page1{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.section1{
+    width: 65%;
+    height: 100%;
+    background-color: #363535;
+}
+
+.section2{
+    width: 35%;
+    height: 100%;
+    background-color: #bbbaba;
+}
+
+/* 페이지2에 들어가는 박스들 */
+
+.page2{
+    width: 100vw;
+    height: 100vh;
+}
+
+/* 페이지3에 들어가는 박스들 */
+
+.page3{
+    width: 100vw;
+    height: 100vh;
+}

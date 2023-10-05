@@ -10,8 +10,12 @@ export default {
     addEvt: (ele, evt, fn) => ele.addEventListener(evt, fn),
   
     // 바운딩위치값함수
-    getBCR: (ele) => ele.getBoundingClientRect().top,
+    getBCRT: (ele) => ele.getBoundingClientRect().top,
+
+    // 바운딩위치값 함수(바텀)
+    getBCRB: (ele) => ele.getBoundingClientRect().bottom,
   
     // 옵셋탑값 반환함수
     getOT: (ele) => ele.offsetTop,
+
   }; /////// domFn 객체 /////////////

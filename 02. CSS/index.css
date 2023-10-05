@@ -17,7 +17,7 @@ html::-webkit-scrollbar{
     height: 100vh;
 }
 
-/* 페이지1에 들어가는 박스들 */
+/* 페이지1에 들어갈 요소들 모임 */
 
 .page1{
     display: flex;
@@ -37,16 +37,18 @@ html::-webkit-scrollbar{
     background-color: #bbbaba;
 }
 
-/* 페이지2에 들어가는 박스들 */
+/* 페이지2에 들어갈 요소들 모임 */
 
 .page2{
     width: 100vw;
     height: 100vh;
+    background-color: #bcbcbc;
 }
 
-/* 페이지3에 들어가는 박스들 */
+/* 페이지3에 들어갈 요소들 모임 */
 
 .page3{
     width: 100vw;
     height: 100vh;
+    background-color: #acacac;
 }

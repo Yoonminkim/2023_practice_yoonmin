@@ -1,5 +1,8 @@
 
+// DOM 함수 임포트 해오기
 import dFn from './dom.js';
+// liData 임포트 해오기
+import liData from './data.js';
 
 // section1 요소 선택
 const section1 = dFn.qs('.section1');
@@ -19,11 +22,11 @@ dFn.addEvt(section2, 'mouseenter', ()=>{
 // banner1에 들어있는 li 요소 선택
 const banner1Li = dFn.qsa('.section1 li');
 
-// banner1에 들어있는 li요소 하나의 높이값 설정
+// banner1에 들어있는 li요소 하나의 높이값을 가져와 oneLiHeight 변수에 저장
 const oneLiHeight = banner1Li[0].scrollHeight;
 console.log(oneLiHeight);
 
-// 화면을 내릴 때 
+// 화면을 아래로 스크롤, 위로 스크롤 할때를 알기위한 이벤트 함수
 dFn.addEvt(window, 'scroll', moveScreen);
 
 function moveScreen(){
@@ -33,3 +36,5 @@ function moveScreen(){
     console.log(bBottom);
 
 }
+
+// 

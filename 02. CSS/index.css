@@ -1,0 +1,191 @@
+@charset "utf-8";
+
+html{
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+html, body, h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    padding: 0;
+}
+
+html::-webkit-scrollbar{
+    display: none;
+}
+
+ul, li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* 페이지 박스 ////////////////////////////////////////////////////////////////////////// */
+
+.page{
+    /* position: relative; */
+    width: 100vw;
+    height: 100vh;
+}
+
+/* 페이지 박스 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+
+/* 페이지1에 들어갈 요소들 모임 /////////////////////////////////////////////////*/
+
+.page1{
+    display: flex;
+    width: 100vw;
+    /* li 한 개의 높이가 65, 총 6개가 있으므로 높이는 총 390으로 설정 */
+    height: 390vh;
+}
+
+/* 섹션1 ////////////////////////////////////////////////////////// */
+
+.section1{
+    width: 35%;
+    height: 100%;
+    background-color: #acacac;
+}
+
+/* 섹션 1구역 넓이 지정을 위한 CSS*/
+.section1{
+    display: flex;
+    flex-direction: column;  /* 세로로 전환 */
+    width: 35%;
+    height: 100%;
+    background-color: #363535;
+}
+
+/* 배너가 들어갈 구역으로 section1에 포함 */
+#banner1{
+    width: 100%;
+    height: 100%;
+}
+
+/* section1에 들어가는 li들의 설정 */
+/* JS를 이용하여 데이터 객체화 및 자동 뿌리기 예정 */
+.section1 li{
+    width: 100%;
+    height: 65vh;
+    background-color: red;
+    font-size: 2rem;
+    font-weight: bolder;
+    outline: 1px dashed blue;
+}
+
+/* 섹션1 종료 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+/* 섹션2 ////////////////////////////////////////////////////////// */
+
+.section2{
+    position: sticky;
+    top: 0;
+    width: 65%;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+/* top 네비게이션 CSS */
+#topNav{
+    width: 100%;
+    height: 5vh;
+    outline: 1px dashed blue;
+    padding-left: 80%;
+}
+
+#topNav ul{
+    display: flex;
+    gap: 0 5%;
+    width: 100%;
+    height: 100%;
+    line-height: 3;
+}
+
+/* top 네비게이션 a 태그 스타일 */
+#topNav a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* top 네비게이션 a 태그 마우스 호버에 따른 애니메이션 구현 */
+
+/* content가 들어갈 section 공간 */
+#stArea{
+    width: 100%;
+    height: 90vh;
+    outline: 1px dashed blue;
+}
+
+#topBlink{
+    width: 100%;
+    height: 35vh;
+}
+
+/* section 공간 내 text1가 쓰여질 곳 (메인) */
+#stAreaText1{
+    width: 100%;
+    height: 10vh;
+    font-size: 3rem;
+    line-height: 3;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* section 공간 내 text2가 쓰여질 곳 (서브) */
+#stAreaText2{
+    width: 100%;
+    height: 10vh;
+    font-size: 2rem;
+    line-height: 2;
+    text-align: center;
+}
+
+#bottomBlink{
+    width: 100%;
+    height: 35vh;
+}
+
+/* bottom 네비게이션 CSS */
+#bottomNav ul{
+    padding-left: 2%;
+    width: 100%;
+    height: 100%;
+    line-height: 2;
+}
+
+/* bottom 네비게이션 a 태그 스타일 */
+#bottomNav a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* 섹션2 종료 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+
+/* 페이지1 종료 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+
+/* 페이지2에 들어갈 요소들 모임 //////////////////////////////////////////////// */
+
+.page2{
+    width: 100vw;
+    height: 100vh;
+    background-color: #bcbcbc;
+}
+
+/* 페이지2 종료 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+
+/* 페이지3에 들어갈 요소들 모임 ////////////////////////////////////////////////// */
+
+.page3{
+    width: 100vw;
+    height: 100vh;
+    background-color: #acacac;
+}
+
+/* 페이지3 종료 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */

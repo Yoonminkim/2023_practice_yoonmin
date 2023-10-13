@@ -53,11 +53,8 @@ function moveScreen(){
     
     // section1의 높이에 맞춰 section2의 stikcy 값을 고정
     let nowHeight = dFn.getBCRT(banner1Li[5]);
-    
-    // TextCheck();
-    
-    // Timer();
-    // 높이 값에 맞춰 텍스트 변경!
+
+    // 높이 값에 맞춰 텍스트 변경! 및 클래스 추가 변경으로 색상 조정
     if(nowHeight > 2160){
         Text1.innerText = `${liData[0].TEXT[0]}`
         Text2.innerText = `${liData[0].TEXT[1]}`
@@ -97,47 +94,6 @@ function moveScreen(){
         Text2.innerText = `${liData[5].TEXT[1]}`
         banner[5].classList.remove('color_off');
         banner[4].classList.add('color_off');
-    }
-}
-
-// 현재 텍스트에 맞춰서 이미지 컬러 입히기
-
-function TextCheck(){
-    console.log(Text1.innerText);
-    if(Text1.innerText == liData[0].TEXT[0]){
-        console.log('0');
-        banner[0].classList.remove('color_off');
-        banner[0].classList.add('color_on');
-    }
-    else if(Text1.innerText == liData[1].TEXT[0]){
-        console.log('1');
-        banner[0].classList.remove('color_on');
-        banner[0].classList.add('color_off');
-        banner[1].classList.remove('color_off');
-        banner[1].classList.add('color_on');
-    }
-    else if(Text1.innerText == liData[2].TEXT[0]){
-        console.log('2');
-        banner[2].classList.remove('color_off');
-        banner[2].classList.add('color_on');
-    }
-    else if(Text1.innerText == liData[3].TEXT[0]){
-        console.log('3');
-        banner[3].classList.remove('color_off');
-        banner[3].classList.add('color_on');
-    }
-    else if(Text1.innerText == liData[4].TEXT[0]){
-        console.log('4');
-        banner[4].classList.remove('color_off');
-        banner[4].classList.add('color_on');
-    }
-    else if(Text1.innerText == liData[5].TEXT[0]){
-        console.log('5');
-        banner[5].classList.remove('color_off');
-        banner[5].classList.add('color_on');
-    }
-    else{
-        console.log('뭐야이거');
     }
 }
 

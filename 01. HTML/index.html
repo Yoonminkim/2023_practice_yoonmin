@@ -5,20 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>We!</title>
     <link rel="stylesheet" href="../02. CSS/index.css">
+    <link rel="stylesheet" href="../02. CSS/effect.css">
     <script type="module" src="../03. JS/index.js"></script>
+    <script src="../03. JS/mousemove.js" defer></script>
 </head>
 <body>
+    
     <div class="page page1">
 
         <!-- 배너 구역 -->
         <div class="section1">
                 <ul id="banner1">
                     <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>6</li>
+                    <li class="color_off">2</li>
+                    <li class="color_off">3</li>
+                    <li class="color_off">4</li>
+                    <li class="color_off">5</li>
+                    <li class="color_off">6</li>
                 </ul>
             </div>
 
@@ -36,8 +39,8 @@
             </nav>
             <section id="stArea">
                 <div id="topBlink"></div>
-                <div id="stAreaText1">THIS IS TEXT2</div>
-                <div id="stAreaText2">THIS IS TEXT</div>
+                <div id="stAreaText1"></div>
+                <div id="stAreaText2"></div>
                 <div id="bottomBlink"></div>
             </section>
             <nav id="bottomNav">
@@ -49,5 +52,9 @@
     </div>
     <div class="page page2"></div>
     <div class="page page3"></div>
+
+    <!-- 따라다니는 원 -->
+    <div class="mover"></div>
+
 </body>
 </html>

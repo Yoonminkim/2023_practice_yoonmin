@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+/* 스크롤에 따라 글씨가 변경될 때 애니메이션 */
+
+.effect_text{
+    animation: efText .5s ease-in forwards;
+}
+
+@keyframes efText {
+    from{
+        transform: scale(.99);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+/* 맨 처음 들어왔을 때 첫 번째 li는 책이 칠해진 것 처럼 보이게 클래스 */
+
+.color_off{
+    filter: grayscale(1);
+}
+
+/* ************************************** 마우스 무버 ************** */
+
+:root {
+    --mover-size: 25px;
+}
+
+/* 따라다니는 원 */
+.mover {
+    position: absolute;
+    /* position: fixed; -> JS에서 clientY사용 */
+    top: 0;
+    left: 0;
+    width: var(--mover-size);
+    height: var(--mover-size);
+    border-radius: 50%;
+    background-color: rgb(206, 227, 227);
+  
+    /* 자기자신요소는 이벤트가 무시되게 셋팅해야
+      아래쪽 요소를 만질 수 있음 */
+    pointer-events: none;
+  
+    mix-blend-mode: exclusion;
+    /* 
+          [mix-blend-mode 속성]
+          - 겹치는 색상처리 블랜딩 모드속성
+          - 겹치는 요소의 색상을 섞어서
+          디스플레이 처리함
+          - 밝은색섞기(screen계열)
+          - 어두운색섞기(darken계열)
+      */
+  
+    /* 트랜지션 : 이징은 ease-out */
+    transition: 0.4s ease-out;
+  
+    /* 처음에 안보임 */
+    opacity: 1;
+  }

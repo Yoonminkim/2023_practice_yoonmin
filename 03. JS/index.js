@@ -5,6 +5,13 @@ import dFn from './dom.js';
 // liData 임포트 해오기
 import liData from './data.js';
 
+// 새로고침 했을 때, 스크롤을 맨 위로 보내기
+window.onload = () =>{
+    setTimeout(()=>{
+        scrollTo(0,0)
+    }, 100);
+};
+
 // section1 요소 선택
 const section1 = dFn.qs('.section1');
 // section2 요소 선택
@@ -19,6 +26,7 @@ dFn.addEvt(section1, 'mouseenter', ()=>{
 dFn.addEvt(section2, 'mouseenter', ()=>{
     console.log('mouseenter', event.currentTarget);
 });
+
 
 // banner1에 들어있는 li 요소 선택
 const banner1Li = dFn.qsa('.section1 li');
@@ -36,46 +44,101 @@ dFn.addEvt(window, 'scroll', moveScreen);
 const Text1 = dFn.qs('#stAreaText1');
 const Text2 = dFn.qs('#stAreaText2');
 
+// 화면을 불러오자마자 처음 단계의 텍스트가 나오도록 설정
+Text1.innerText = `${liData[0].TEXT[0]}`
+Text2.innerText = `${liData[0].TEXT[1]}`
+
 // 텍스트를 바꾸기 위해 TOP 높이값 확인하기
-let i = 1;
-let countHeight = nowHeight-480/2;
-
-
 function moveScreen(){
     
     // section1의 높이에 맞춰 section2의 stikcy 값을 고정
     let nowHeight = dFn.getBCRT(banner1Li[5]);
-    let bBottom = dFn.getBCRB(banner1Li[4]);
-    // console.log(bBottom);
-    console.log(nowHeight);
-
+    
+    // TextCheck();
+    
+    // Timer();
     // 높이 값에 맞춰 텍스트 변경!
     if(nowHeight > 2160){
-        console.log("1");
-        Text1.innerText = `${liData.banner1.TEXT[0]};`
-        Text2.innerText = `${liData.banner1.TEXT[1]};`
+        Text1.innerText = `${liData[0].TEXT[0]}`
+        Text2.innerText = `${liData[0].TEXT[1]}`
+        banner[0].classList.remove('color_off');
+        banner[1].classList.add('color_off');
     }
     else if(2160 > nowHeight && nowHeight > 1680){
-        Text1.innerText = `${liData.banner2.TEXT[0]};`
-        Text2.innerText = `${liData.banner2.TEXT[1]};`
+        Text1.innerText = `${liData[1].TEXT[0]}`
+        Text2.innerText = `${liData[1].TEXT[1]}`
+        banner[0].classList.add('color_off');
+        banner[1].classList.remove('color_off');
+        banner[2].classList.add('color_off');
     }
     else if(1680 > nowHeight && nowHeight > 1200){
-        Text1.innerText = `${liData.banner3.TEXT[0]};`
-        Text2.innerText = `${liData.banner3.TEXT[1]};`
+        Text1.innerText = `${liData[2].TEXT[0]}`
+        Text2.innerText = `${liData[2].TEXT[1]}`
+        banner[1].classList.add('color_off');
+        banner[2].classList.remove('color_off');
+        banner[3].classList.add('color_off');
     }
     else if(1200 > nowHeight && nowHeight > 720){
-        Text1.innerText = `${liData.banner4.TEXT[0]};`
-        Text2.innerText = `${liData.banner4.TEXT[1]};`
+        Text1.innerText = `${liData[3].TEXT[0]}`
+        Text2.innerText = `${liData[3].TEXT[1]}`
+        banner[2].classList.add('color_off');
+        banner[3].classList.remove('color_off');
+        banner[4].classList.add('color_off');
     }
     else if(720 > nowHeight && nowHeight > 255){
-        Text1.innerText = `${liData.banner5.TEXT[0]};`
-        Text2.innerText = `${liData.banner5.TEXT[1]};`
+        Text1.innerText = `${liData[4].TEXT[0]}`
+        Text2.innerText = `${liData[4].TEXT[1]}`
+        banner[3].classList.add('color_off');
+        banner[4].classList.remove('color_off');
+        banner[5].classList.add('color_off');
     }
     else {
-        Text1.innerText = `${liData.banner6.TEXT[0]};`
-        Text2.innerText = `${liData.banner6.TEXT[1]};`
+        Text1.innerText = `${liData[5].TEXT[0]}`
+        Text2.innerText = `${liData[5].TEXT[1]}`
+        banner[5].classList.remove('color_off');
+        banner[4].classList.add('color_off');
     }
+}
 
+// 현재 텍스트에 맞춰서 이미지 컬러 입히기
+
+function TextCheck(){
+    console.log(Text1.innerText);
+    if(Text1.innerText == liData[0].TEXT[0]){
+        console.log('0');
+        banner[0].classList.remove('color_off');
+        banner[0].classList.add('color_on');
+    }
+    else if(Text1.innerText == liData[1].TEXT[0]){
+        console.log('1');
+        banner[0].classList.remove('color_on');
+        banner[0].classList.add('color_off');
+        banner[1].classList.remove('color_off');
+        banner[1].classList.add('color_on');
+    }
+    else if(Text1.innerText == liData[2].TEXT[0]){
+        console.log('2');
+        banner[2].classList.remove('color_off');
+        banner[2].classList.add('color_on');
+    }
+    else if(Text1.innerText == liData[3].TEXT[0]){
+        console.log('3');
+        banner[3].classList.remove('color_off');
+        banner[3].classList.add('color_on');
+    }
+    else if(Text1.innerText == liData[4].TEXT[0]){
+        console.log('4');
+        banner[4].classList.remove('color_off');
+        banner[4].classList.add('color_on');
+    }
+    else if(Text1.innerText == liData[5].TEXT[0]){
+        console.log('5');
+        banner[5].classList.remove('color_off');
+        banner[5].classList.add('color_on');
+    }
+    else{
+        console.log('뭐야이거');
+    }
 }
 
 // 배너에 이미지 넣기 ///////////////////////////////////////////////////////////////
@@ -83,16 +146,29 @@ function moveScreen(){
 // 대상선정: #banner1 li
 const banner = dFn.qsa('#banner1 li');
 
-banner.forEach((ele)=>{
+console.log(banner);
+
+banner.forEach((ele,idx) => {
     ele.innerHTML = `
         <div id="inner_box">
             <div id="inner_box2">
-                <img src="${liData.banner1.IMAGE}" alt="images"></img>
+                <img class="ban_img" src="${liData[idx].IMAGE}" alt="image"/>
             </div>
         </div>
-        `;
+    `
 });
 
-
+banner.forEach(ele => {
+    ele.addEventListener('mouseover', ()=>{
+        ele.classList.add('effect_text');
+    });
+    ele.addEventListener('mouseout', ()=>{
+        ele.classList.remove('effect_text');
+    });
+});
 
 // 배너에 맞춘 텍스트 가져오기 ////////////////////////////////////////////////////////////////
+
+
+
+

@@ -68,10 +68,10 @@ ul, li{
 .section1 li{
     width: 100%;
     height: 65vh;
-    background-color: red;
+    background-color: white;
     font-size: 2rem;
     font-weight: bolder;
-    outline: 1px dashed blue;
+    outline: 1px solid #ccc;
 }
 
 /* 배너1 안쪽 박스 CSS */
@@ -86,7 +86,6 @@ ul, li{
     height: 90%;
     padding: 5%;
 }
-
 
 
 #banner1 img{
@@ -112,13 +111,14 @@ ul, li{
     width: 65%;
     height: 100vh;
     background-color: #ffffff;
+    outline: 1px solid #ccc;
 }
 
 /* top 네비게이션 CSS */
 #topNav{
     width: 100%;
     height: 5vh;
-    outline: 1px dashed blue;
+    /* outline: 1px dashed blue; */
     padding-left: 75%;
 }
 
@@ -143,7 +143,7 @@ ul, li{
 #stArea{
     width: 100%;
     height: 90vh;
-    outline: 1px dashed blue;
+    /* outline: 1px dashed blue; */
 }
 
 #topBlink{

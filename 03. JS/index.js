@@ -121,10 +121,9 @@ banner.forEach(ele => {
     ele.addEventListener('mouseout', ()=>{
         ele.classList.remove('effect_text');
     });
+    ele.addEventListener('click', () => {
+        console.log('click!', ele);
+    })
 });
 
 // 배너에 맞춘 텍스트 가져오기 ////////////////////////////////////////////////////////////////
-
-
-
-

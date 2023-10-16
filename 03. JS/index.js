@@ -48,19 +48,23 @@ Text1.innerText = `${liData[0].TEXT[0]}`
 Text2.innerText = `${liData[0].TEXT[1]}`
 
 let nowHeight = 0;
-const displayHeight = screen.height;
+const DisplayHeight = window.innerHeight;
+const NowHeight = dFn.getBCRB(banner1Li[5]);
+const SumHeight = DisplayHeight/3;
 
-const liHeight = displayHeight*3 + displayHeight/3*2;
-const SumHeight = displayHeight/3*2;
 
 // 텍스트를 바꾸기 위해 TOP 높이값 확인하기
 function moveScreen(){
 
     // section1의 높이에 맞춰 section2의 stikcy 값을 고정
-    nowHeight = dFn.getBCRT(banner1Li[5]);
+    nowHeight = dFn.getBCRB(banner1Li[5]);
+    console.log(NowHeight);
+
+    console.log(nowHeight);
+    console.log(SumHeight);
 
     // 높이 값에 맞춰 텍스트 변경! 및 클래스 추가 변경으로 색상 조정
-    if(nowHeight > liHeight-SumHeight){
+    if(nowHeight > NowHeight-SumHeight){
         Text1.innerText = `${liData[0].TEXT[0]}`
         Text2.innerText = `${liData[0].TEXT[1]}`
         banner[0].classList.remove('color_off');
@@ -68,7 +72,7 @@ function moveScreen(){
         Text1.classList.add('text_on');
         Text1.classList.remove('text_on');
     }
-    else if((liHeight-SumHeight) > nowHeight && nowHeight > liHeight-SumHeight*2){
+    else if((NowHeight-SumHeight) > nowHeight && nowHeight > NowHeight-SumHeight*3){
         Text1.innerText = `${liData[1].TEXT[0]}`
         Text2.innerText = `${liData[1].TEXT[1]}`
         banner[0].classList.add('color_off');
@@ -76,7 +80,7 @@ function moveScreen(){
         banner[2].classList.add('color_off');
         Textani();
     }
-    else if((liHeight-SumHeight*2) > nowHeight && nowHeight > liHeight-SumHeight*3){
+    else if((NowHeight-SumHeight*3) > nowHeight && nowHeight > NowHeight-SumHeight*5){
         Text1.innerText = `${liData[2].TEXT[0]}`
         Text2.innerText = `${liData[2].TEXT[1]}`
         banner[1].classList.add('color_off');
@@ -84,7 +88,7 @@ function moveScreen(){
         banner[3].classList.add('color_off');
         Textani();
     }
-    else if((liHeight-SumHeight*3) > nowHeight && nowHeight > liHeight-SumHeight*4){
+    else if((NowHeight-SumHeight*5) > nowHeight && nowHeight > NowHeight-SumHeight*7){
         Text1.innerText = `${liData[3].TEXT[0]}`
         Text2.innerText = `${liData[3].TEXT[1]}`
         banner[2].classList.add('color_off');
@@ -92,7 +96,7 @@ function moveScreen(){
         banner[4].classList.add('color_off');
         Textani();
     }
-    else if((liHeight-SumHeight*4) > nowHeight && nowHeight > liHeight-SumHeight*5){
+    else if((NowHeight-SumHeight*7) > nowHeight && nowHeight > NowHeight-SumHeight*9){
         Text1.innerText = `${liData[4].TEXT[0]}`
         Text2.innerText = `${liData[4].TEXT[1]}`
         banner[3].classList.add('color_off');
@@ -100,7 +104,7 @@ function moveScreen(){
         banner[5].classList.add('color_off');
         Textani();
     }
-    else if((liHeight-SumHeight*5) > nowHeight && nowHeight > liHeight-SumHeight*6){
+    else if((NowHeight-SumHeight*9) > nowHeight && nowHeight > NowHeight-SumHeight*11){
         Text1.innerText = `${liData[5].TEXT[0]}`
         Text2.innerText = `${liData[5].TEXT[1]}`
         banner[5].classList.remove('color_off');

@@ -27,7 +27,6 @@ dFn.addEvt(section2, 'mouseenter', ()=>{
     console.log('mouseenter', event.currentTarget);
 });
 
-
 // banner1에 들어있는 li 요소 선택
 const banner1Li = dFn.qsa('.section1 li');
 
@@ -58,10 +57,7 @@ function moveScreen(){
 
     // section1의 높이에 맞춰 section2의 stikcy 값을 고정
     nowHeight = dFn.getBCRB(banner1Li[5]);
-    console.log(NowHeight);
-
     console.log(nowHeight);
-    console.log(SumHeight);
 
     // 높이 값에 맞춰 텍스트 변경! 및 클래스 추가 변경으로 색상 조정
     if(nowHeight > NowHeight-SumHeight){
@@ -78,7 +74,6 @@ function moveScreen(){
         banner[0].classList.add('color_off');
         banner[1].classList.remove('color_off');
         banner[2].classList.add('color_off');
-        Textani();
     }
     else if((NowHeight-SumHeight*3) > nowHeight && nowHeight > NowHeight-SumHeight*5){
         Text1.innerText = `${liData[2].TEXT[0]}`
@@ -86,7 +81,6 @@ function moveScreen(){
         banner[1].classList.add('color_off');
         banner[2].classList.remove('color_off');
         banner[3].classList.add('color_off');
-        Textani();
     }
     else if((NowHeight-SumHeight*5) > nowHeight && nowHeight > NowHeight-SumHeight*7){
         Text1.innerText = `${liData[3].TEXT[0]}`
@@ -94,7 +88,6 @@ function moveScreen(){
         banner[2].classList.add('color_off');
         banner[3].classList.remove('color_off');
         banner[4].classList.add('color_off');
-        Textani();
     }
     else if((NowHeight-SumHeight*7) > nowHeight && nowHeight > NowHeight-SumHeight*9){
         Text1.innerText = `${liData[4].TEXT[0]}`
@@ -102,14 +95,16 @@ function moveScreen(){
         banner[3].classList.add('color_off');
         banner[4].classList.remove('color_off');
         banner[5].classList.add('color_off');
-        Textani();
     }
     else if((NowHeight-SumHeight*9) > nowHeight && nowHeight > NowHeight-SumHeight*11){
         Text1.innerText = `${liData[5].TEXT[0]}`
         Text2.innerText = `${liData[5].TEXT[1]}`
         banner[5].classList.remove('color_off');
         banner[4].classList.add('color_off');
-        Textani();
+    }
+
+    else if(nowHeight < SumHeight ){
+        console.log('DAAAAAM');
     }
 }
 
@@ -134,24 +129,15 @@ banner.forEach(ele => {
     ele.addEventListener('mouseout', ()=>{
         ele.classList.remove('effect_text');
     });
+    // 각 li를 누르면 해당되는 페이지로 이동
     ele.addEventListener('click', () => {
         console.log('click!', ele);
-        console.log(nowHeight);
     })
 });
 
-// 배너에 맞춘 텍스트 가져오기 ////////////////////////////////////////////////////////////////
+// page2의 높이 확인 ////////////////////////////////////////////////////////
 
-// 텍스트 효과 클래스 넣기, 빼기 함수
-function Textani(){
-    Text1.classList.remove('text_on');
-    Text1.classList.add('text_on');
-    setTimeout(()=>{
-        Text1.classList.remove('text_on');
-    },1000);
-}
+const page2 = dFn.qs('.page2');
+const Page2Height = dFn.getBCRT(page2);
 
-function StartPath(){
-    console.log('StartPath');
-}
-
+console.log(Page2Height);

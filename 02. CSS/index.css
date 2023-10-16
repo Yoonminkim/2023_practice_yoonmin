@@ -91,7 +91,8 @@ ul, li{
 #banner1 img{
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: cover;
+    border-radius: 5%;
 }
 
 
@@ -155,7 +156,7 @@ ul, li{
 #stAreaText1{
     width: 100%;
     height: 10vh;
-    font-size: 3rem;
+    font-size: 4rem;
     line-height: 3;
     text-align: center;
     font-weight: bold;
@@ -165,7 +166,7 @@ ul, li{
 #stAreaText2{
     width: 100%;
     height: 10vh;
-    font-size: 2rem;
+    font-size: 3rem;
     line-height: 2;
     text-align: center;
 }
@@ -197,12 +198,23 @@ ul, li{
 /* 페이지1 종료 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 
+
+/* ******************************************************************************** */
+/* *********************************** Page2 시작 ***************************************** */
+/* ******************************************************************************** */
+
 /* 페이지2에 들어갈 요소들 모임 //////////////////////////////////////////////// */
 
 .page2{
     width: 100vw;
-    height: 200vh;
+    height: 100vh;
     background-color: #bcbcbc;
+}
+
+.viddo_div_3{
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 /* 페이지2 종료 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
@@ -217,3 +229,27 @@ ul, li{
 }
 
 /* 페이지3 종료 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+
+/* Page2 진입 시 Home 버튼이 나타남 */
+
+.Pbtn{
+    position: absolute;
+    top: 90%;
+    outline: 1px solid black;
+    width: 10vw;
+    height: 7vh;
+    border-radius: 10px;
+    left: calc(100% - 55%);
+}
+
+/* 
+.home{
+    position: sticky;
+    top: 90%;
+    outline: 1px solid black;
+    width: 10vw;
+    height: 7vh;
+    border-radius: 10px;
+    left: calc(100% - 55%);
+} */

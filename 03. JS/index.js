@@ -33,7 +33,6 @@ const banner1Li = dFn.qsa('.section1 li');
 
 // banner1에 들어있는 li요소 하나의 높이값을 가져와 oneLiHeight 변수에 저장
 const oneLiHeight = banner1Li[0].scrollHeight;
-console.log(oneLiHeight);
 
 // 화면을 아래로 스크롤, 위로 스크롤 할때를 알기위한 이벤트 함수
 dFn.addEvt(window, 'scroll', moveScreen);
@@ -48,52 +47,65 @@ const Text2 = dFn.qs('#stAreaText2');
 Text1.innerText = `${liData[0].TEXT[0]}`
 Text2.innerText = `${liData[0].TEXT[1]}`
 
+let nowHeight = 0;
+const displayHeight = screen.height;
+
+const liHeight = displayHeight*3 + displayHeight/3*2;
+const SumHeight = displayHeight/3*2;
+
 // 텍스트를 바꾸기 위해 TOP 높이값 확인하기
 function moveScreen(){
-    
+
     // section1의 높이에 맞춰 section2의 stikcy 값을 고정
-    let nowHeight = dFn.getBCRT(banner1Li[5]);
+    nowHeight = dFn.getBCRT(banner1Li[5]);
 
     // 높이 값에 맞춰 텍스트 변경! 및 클래스 추가 변경으로 색상 조정
-    if(nowHeight > 2160){
+    if(nowHeight > liHeight-SumHeight){
         Text1.innerText = `${liData[0].TEXT[0]}`
         Text2.innerText = `${liData[0].TEXT[1]}`
         banner[0].classList.remove('color_off');
         banner[1].classList.add('color_off');
+        Text1.classList.add('text_on');
+        Text1.classList.remove('text_on');
     }
-    else if(2160 > nowHeight && nowHeight > 1680){
+    else if((liHeight-SumHeight) > nowHeight && nowHeight > liHeight-SumHeight*2){
         Text1.innerText = `${liData[1].TEXT[0]}`
         Text2.innerText = `${liData[1].TEXT[1]}`
         banner[0].classList.add('color_off');
         banner[1].classList.remove('color_off');
         banner[2].classList.add('color_off');
+        Textani();
     }
-    else if(1680 > nowHeight && nowHeight > 1200){
+    else if((liHeight-SumHeight*2) > nowHeight && nowHeight > liHeight-SumHeight*3){
         Text1.innerText = `${liData[2].TEXT[0]}`
         Text2.innerText = `${liData[2].TEXT[1]}`
         banner[1].classList.add('color_off');
         banner[2].classList.remove('color_off');
         banner[3].classList.add('color_off');
+        Textani();
     }
-    else if(1200 > nowHeight && nowHeight > 720){
+    else if((liHeight-SumHeight*3) > nowHeight && nowHeight > liHeight-SumHeight*4){
         Text1.innerText = `${liData[3].TEXT[0]}`
         Text2.innerText = `${liData[3].TEXT[1]}`
         banner[2].classList.add('color_off');
         banner[3].classList.remove('color_off');
         banner[4].classList.add('color_off');
+        Textani();
     }
-    else if(720 > nowHeight && nowHeight > 255){
+    else if((liHeight-SumHeight*4) > nowHeight && nowHeight > liHeight-SumHeight*5){
         Text1.innerText = `${liData[4].TEXT[0]}`
         Text2.innerText = `${liData[4].TEXT[1]}`
         banner[3].classList.add('color_off');
         banner[4].classList.remove('color_off');
         banner[5].classList.add('color_off');
+        Textani();
     }
-    else {
+    else if((liHeight-SumHeight*5) > nowHeight && nowHeight > liHeight-SumHeight*6){
         Text1.innerText = `${liData[5].TEXT[0]}`
         Text2.innerText = `${liData[5].TEXT[1]}`
         banner[5].classList.remove('color_off');
         banner[4].classList.add('color_off');
+        Textani();
     }
 }
 
@@ -101,9 +113,6 @@ function moveScreen(){
 
 // 대상선정: #banner1 li
 const banner = dFn.qsa('#banner1 li');
-
-console.log(banner);
-
 banner.forEach((ele,idx) => {
     ele.innerHTML = `
         <div id="inner_box">
@@ -123,7 +132,22 @@ banner.forEach(ele => {
     });
     ele.addEventListener('click', () => {
         console.log('click!', ele);
+        console.log(nowHeight);
     })
 });
 
 // 배너에 맞춘 텍스트 가져오기 ////////////////////////////////////////////////////////////////
+
+// 텍스트 효과 클래스 넣기, 빼기 함수
+function Textani(){
+    Text1.classList.remove('text_on');
+    Text1.classList.add('text_on');
+    setTimeout(()=>{
+        Text1.classList.remove('text_on');
+    },1000);
+}
+
+function StartPath(){
+    console.log('StartPath');
+}
+

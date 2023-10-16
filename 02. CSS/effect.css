@@ -21,6 +21,14 @@
     filter: grayscale(1);
 }
 
+
+/* Text 애니메이션 클래스 주기 */
+
+.text_on{
+    animation: efText .1s ease-in forwards;
+}
+
+
 /* ************************************** 마우스 무버 ************** */
 
 :root {

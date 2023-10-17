@@ -19,19 +19,16 @@ const section2 = dFn.qs('.section2');
 
 // section1 마우스 들어올 경우 이벤트
 dFn.addEvt(section1, 'mouseenter', ()=>{
-    console.log('mouseenter', event.currentTarget);
+    // console.log('mouseenter', event.currentTarget);
 });
 
 // section2 마우스 들어올 경우 이벤트
 dFn.addEvt(section2, 'mouseenter', ()=>{
-    console.log('mouseenter', event.currentTarget);
+    // console.log('mouseenter', event.currentTarget);
 });
 
 // banner1에 들어있는 li 요소 선택
 const banner1Li = dFn.qsa('.section1 li');
-
-// banner1에 들어있는 li요소 하나의 높이값을 가져와 oneLiHeight 변수에 저장
-const oneLiHeight = banner1Li[0].scrollHeight;
 
 // 화면을 아래로 스크롤, 위로 스크롤 할때를 알기위한 이벤트 함수
 dFn.addEvt(window, 'scroll', moveScreen);
@@ -51,13 +48,16 @@ const DisplayHeight = window.innerHeight;
 const NowHeight = dFn.getBCRB(banner1Li[5]);
 const SumHeight = DisplayHeight/3;
 
+// Home 버튼 요소 선택
+const btnHome = dFn.qs('.Pbtn');
+
 
 // 텍스트를 바꾸기 위해 TOP 높이값 확인하기
 function moveScreen(){
 
     // section1의 높이에 맞춰 section2의 stikcy 값을 고정
     nowHeight = dFn.getBCRB(banner1Li[5]);
-    console.log(nowHeight);
+    // console.log(nowHeight);
 
     // 높이 값에 맞춰 텍스트 변경! 및 클래스 추가 변경으로 색상 조정
     if(nowHeight > NowHeight-SumHeight){
@@ -101,10 +101,13 @@ function moveScreen(){
         Text2.innerText = `${liData[5].TEXT[1]}`
         banner[5].classList.remove('color_off');
         banner[4].classList.add('color_off');
+        btnHome.classList.remove('on');
+        btnHome.classList.add('out');
     }
-
+    
     else if(nowHeight < SumHeight ){
-        console.log('DAAAAAM');
+        btnHome.classList.remove('out');
+        btnHome.classList.add('on');
     }
 }
 
@@ -140,4 +143,4 @@ banner.forEach(ele => {
 const page2 = dFn.qs('.page2');
 const Page2Height = dFn.getBCRT(page2);
 
-console.log(Page2Height);
+// console.log(Page2Height);

@@ -233,35 +233,21 @@ ul, li{
 
 /* Page2 진입 시 Home 버튼이 나타남 */
 
-.Pbtn{
+.btnHome{
     position: fixed;
-    top: 90%;
+    width: 9%;
+    height: 8%;
     left: calc(100% - 55%);
-    width: 10vw;
-    height: 7vh;
-    border-radius: 20px;
-    background-color: #a07d7d;
-    display: none;
-}
-
-.home{
-    position: relative;
-    width: 90%;
-    height: 80%;
-    left: calc(100% - 95%);
-    top: calc(100% - 90%);
+    top: calc(100% - 12%);
     border-radius: 20px;
     outline: 1px solid #ffffff00;
     background-color: #ffffff;
-    
+    opacity: 0;
 }
 
 .on{
     display: block;
-    animation: setOn .3s ease-out forwards;
-}
-.out{
-    animation: setOut .3s ease-out forwards;
+    animation: setOn .7s ease-out forwards;
 }
 
 /* 클래스 on을 주면 나타나는 애니메이션 */
@@ -275,26 +261,3 @@ ul, li{
         transform: translateY(0);
     }
 }
-
-/* 클래스 on이 없어지면 실행되는 애니 */
-@keyframes setOut {
-    from{
-        opacity: 1;
-        transform: translateY(0);
-    }
-    to{
-        opacity: 0;
-        transform: translateY(100%);
-    }
-}
-
-/* 
-.home{
-    position: sticky;
-    top: 90%;
-    outline: 1px solid black;
-    width: 10vw;
-    height: 7vh;
-    border-radius: 10px;
-    left: calc(100% - 55%);
-} */

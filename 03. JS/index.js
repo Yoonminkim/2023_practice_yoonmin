@@ -39,18 +39,20 @@ dFn.addEvt(window, 'scroll', moveScreen);
 const Text1 = dFn.qs('#stAreaText1');
 const Text2 = dFn.qs('#stAreaText2');
 
+// Home 버튼 요소 선택
+const btnHome = dFn.qs('.btnHome');
+
+
 // 화면을 불러오자마자 처음 단계의 텍스트가 나오도록 설정
 Text1.innerText = `${liData[0].TEXT[0]}`
 Text2.innerText = `${liData[0].TEXT[1]}`
+
+// 화면을 불러오자마자 버튼에 클래스 없애서 안보이도록 설정
 
 let nowHeight = 0;
 const DisplayHeight = window.innerHeight;
 const NowHeight = dFn.getBCRB(banner1Li[5]);
 const SumHeight = DisplayHeight/3;
-
-// Home 버튼 요소 선택
-const btnHome = dFn.qs('.Pbtn');
-
 
 // 텍스트를 바꾸기 위해 TOP 높이값 확인하기
 function moveScreen(){
@@ -96,19 +98,22 @@ function moveScreen(){
         banner[4].classList.remove('color_off');
         banner[5].classList.add('color_off');
     }
-    else if((NowHeight-SumHeight*9) > nowHeight && nowHeight > NowHeight-SumHeight*11){
+    else if((NowHeight-SumHeight*9) > nowHeight && nowHeight > NowHeight-SumHeight*10){
         Text1.innerText = `${liData[5].TEXT[0]}`
         Text2.innerText = `${liData[5].TEXT[1]}`
         banner[5].classList.remove('color_off');
         banner[4].classList.add('color_off');
         btnHome.classList.remove('on');
-        btnHome.classList.add('out');
     }
     
     else if(nowHeight < SumHeight ){
-        btnHome.classList.remove('out');
         btnHome.classList.add('on');
     }
+
+    console.log(nowHeight);
+    console.log(SumHeight);
+    console.log(NowHeight-SumHeight*10);
+
 }
 
 // 배너에 이미지 넣기 ///////////////////////////////////////////////////////////////

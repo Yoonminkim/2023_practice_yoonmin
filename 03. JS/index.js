@@ -47,8 +47,6 @@ const btnHome = dFn.qs('.btnHome');
 Text1.innerText = `${liData[0].TEXT[0]}`
 Text2.innerText = `${liData[0].TEXT[1]}`
 
-// 화면을 불러오자마자 버튼에 클래스 없애서 안보이도록 설정
-
 let nowHeight = 0;
 const DisplayHeight = window.innerHeight;
 const NowHeight = dFn.getBCRB(banner1Li[5]);
@@ -145,7 +143,7 @@ banner.forEach(ele => {
 
 // page2의 높이 확인 ////////////////////////////////////////////////////////
 
-const page2 = dFn.qs('.page2');
-const Page2Height = dFn.getBCRT(page2);
 
-// console.log(Page2Height);
+
+
+

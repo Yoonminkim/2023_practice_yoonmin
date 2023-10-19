@@ -240,8 +240,8 @@ ul, li{
     left: calc(100% - 55%);
     top: calc(100% - 12%);
     border-radius: 20px;
-    outline: 1px solid #ffffff00;
-    background-color: #ffffff;
+    border: 1px solid #522727;
+    background-color: #522727;
     opacity: 0;
 }
 

@@ -1,15 +1,15 @@
 
 const liData = [
     {
-        TEXT : ["THIS IS FOR YOU1", "texttext1"],
+        TEXT : ["1. 지금 위치를 확인하세요", "가장 가까운 곳으로"],
         IMAGE : ["../99. IMAGE/banner_1.jpg"]
     },
     {
-        TEXT : ["THIS IS FOR YOU2", "texttext2"],
+        TEXT : ["2. 비어있는 공간을 확인하세요", "가장 알맞은 곳으로"],
         IMAGE : ["../99. IMAGE/banner_2.jpg"]
     },
     {
-        TEXT : ["THIS IS FOR YOU3", "texttext3"],
+        TEXT : ["3. 가방을 인도하세요", "속전 속결로"],
         IMAGE : ["../99. IMAGE/banner_3.jpg"]
     },
     {

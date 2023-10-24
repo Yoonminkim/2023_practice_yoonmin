@@ -5,6 +5,7 @@ import dFn from './dom.js';
 // liData 임포트 해오기
 import liData from './data.js';
 
+
 // 새로고침 했을 때, 스크롤을 맨 위로 보내기
 window.onload = () =>{
     setTimeout(()=>{
@@ -49,6 +50,7 @@ Text2.innerText = `${liData[0].TEXT[1]}`
 
 let nowHeight = 0;
 const DisplayHeight = window.innerHeight;
+const Page0Height = DisplayHeight*1.5;
 const NowHeight = dFn.getBCRB(banner1Li[5]);
 const SumHeight = DisplayHeight/3;
 
@@ -56,8 +58,8 @@ const SumHeight = DisplayHeight/3;
 function moveScreen(){
 
     // section1의 높이에 맞춰 section2의 stikcy 값을 고정
-    nowHeight = dFn.getBCRB(banner1Li[5]);
-    // console.log(nowHeight);
+    nowHeight = Page0Height + dFn.getBCRB(banner1Li[5]);
+    console.log(nowHeight);
 
     // 높이 값에 맞춰 텍스트 변경! 및 클래스 추가 변경으로 색상 조정
     if(nowHeight > NowHeight-SumHeight){
@@ -104,7 +106,7 @@ function moveScreen(){
         btnHome.classList.remove('on');
     }
     
-    else if(nowHeight < SumHeight ){
+    else if(nowHeight < Page0Height + SumHeight ){
         btnHome.classList.add('on');
     }
 

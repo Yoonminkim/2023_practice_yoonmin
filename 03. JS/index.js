@@ -50,7 +50,7 @@ Text2.innerText = `${liData[0].TEXT[1]}`
 
 let nowHeight = 0;
 const DisplayHeight = window.innerHeight;
-const Page0Height = DisplayHeight*1.5;
+const Page0Height = DisplayHeight;
 const NowHeight = dFn.getBCRB(banner1Li[5]);
 const SumHeight = DisplayHeight/3;
 
@@ -144,6 +144,7 @@ banner.forEach(ele => {
 });
 
 // page2의 높이 확인 ////////////////////////////////////////////////////////
+
 
 
 

@@ -26,4 +26,15 @@ const liData = [
     }
 ]
 
-export default liData;
+const TextData = [
+    {
+        TEXT: ["Greatist Football Team is Where?"],
+        TEXT2: ["If Who Ask For You"]
+    },
+    {
+        TEXT: ["Just You Say"],
+        TEXT2: ["Sky is Blue."]
+    }
+]
+
+export default {liData, TextData};

@@ -16,16 +16,29 @@
 }
 
 /* 맨 처음 들어왔을 때 첫 번째 li는 책이 칠해진 것 처럼 보이게 클래스 */
-
 .color_off{
     filter: grayscale(1);
 }
 
 
 /* Text 애니메이션 클래스 주기 */
-
 .text_on{
     animation: efText .1s ease-in forwards;
+}
+
+
+.FadeinText{
+    animation: FadeinText 2s ease-in forwards;
+}
+
+/* 글자 투명에서 보여지기 */
+@keyframes FadeinText {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 

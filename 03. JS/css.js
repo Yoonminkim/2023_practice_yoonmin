@@ -1,8 +1,6 @@
 
 import dFn from './dom.js';
 
-import 
-
 const Page0_Up_Text = dFn.qs('#up');
 const Page0_Down_Text = dFn.qs('#down');
 

@@ -44,7 +44,6 @@ a{
     height: 70vh;
     border: 1px solid #00000030;
     background-color: #f9f9f9;
-    flex-direction: column;
 }
 
 .page_container3{
@@ -163,6 +162,52 @@ a{
     padding-left: 20px;
 }
 
+/* 페이지2 컨테이너 ****************************************************/
+
+.left_container{
+    flex: 1;
+    width: 50%;
+    height: 100%;
+    background-color: #ccc;
+}
+
+#download_btn_android{
+    display: inline-flex;
+    position: relative;
+    width: 15%;
+    height: 10%;
+    background-color: #aca;
+    left: 20%;
+    top: 55%;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+#download_btn_ios{
+    display: inline-flex;
+    position: relative;
+    width: 15%;
+    height: 10%;
+    background-color: #afa;
+    left: 45%;
+    top: 55%;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center
+}
+
+.right_container{
+    width: 50%;
+    height: 100%;
+}
+
+
+
+
+
+
+
 
 /* 페이지2 컨테이너 ****************************************************/
 
@@ -189,13 +234,3 @@ a{
     justify-content: center;
     align-items: flex-start;
 }
-
-
-
-/* 페이지 박스 ****************************************************/
-/* 페이지 박스 ****************************************************/
-/* 페이지 박스 ****************************************************/
-/* 페이지 박스 ****************************************************/
-/* 페이지 박스 ****************************************************/
-
-

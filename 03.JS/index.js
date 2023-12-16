@@ -16,7 +16,7 @@ const text2 = dFn.qs("#textarea_2");
 const bannerLi = dFn.qsa(".section1 li");
 
 const banner_0_height = dFn.getBCRB(bannerLi[bannerLi.length - (bannerLi.length)])
-const banner_0_height_d = banner_0_height / 100 * 17;
+const banner_0_height_d = banner_0_height / 100 * 20;
 
 const banner_1_height = dFn.getBCRB(bannerLi[bannerLi.length - (bannerLi.length - 1)])
 const banner_1_height_d = banner_1_height - banner_0_height_d

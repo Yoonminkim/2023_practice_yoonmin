@@ -32,10 +32,19 @@ a{
     display: flex;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(226, 226, 226);
+    background-color: rgb(255, 255, 255);
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.page_container2_1{
+    display: flex;
+    width: 100vw;
+    height: 70vh;
+    border: 1px solid #00000030;
+    background-color: #f9f9f9;
+    flex-direction: column;
 }
 
 .page_container3{

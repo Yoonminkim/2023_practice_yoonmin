@@ -36,7 +36,8 @@ dFn.addEvt(window, "scroll", moveScreen);
 
 function moveScreen() {
     var nowscrollposition = window.scrollY || document.documentElement.scrollTop;
-    console.log(nowscrollposition, banner_1_height, banner_1_height_d);
+    // console.log(nowscrollposition, banner_1_height, banner_1_height_d);
+    console.log(nowscrollposition);
 
     if(nowscrollposition < banner_0_height){
         text1.innerText = `${liData[0].TEXT[0]}`
@@ -85,3 +86,20 @@ bannerLi.forEach((ele, idx) => {
 });
 
 
+const aos_down_btn = dFn.qs('#download_btn_android>img');
+const ios_down_btn = dFn.qs('#download_btn_ios>img');
+
+
+aos_down_btn.addEventListener('click', godownloadaos);
+ios_down_btn.addEventListener('click', godownloadios);
+
+function godownloadaos(){
+    console.log('click aos');
+}
+
+function godownloadios(){
+    console.log('click ios');
+}
+
+const firstheight = dFn.getBCRB(bannerLi[5]);
+// const godown = firstheight
